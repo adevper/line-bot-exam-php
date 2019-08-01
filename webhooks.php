@@ -1,6 +1,6 @@
 <?php // callback.php
 
-file_put_contents('log.txt', file_get_contents('php://input') . PHP_EOL, FILE_APPEND);
+
 
 require "vendor/autoload.php";
 require_once('vendor/linecorp/line-bot-sdk/line-bot-sdk-tiny/LINEBotTiny.php');
@@ -9,16 +9,24 @@ $access_token = 'dbT/YlbWgSdq2HTmh+qvKUz19cfMHHiFjO6no7px9vt60Dtn1CAXcSXghZxxBbN
 
 // Get POST body content
 $content = file_get_contents('php://input');
+
 // Parse JSON
 $events = json_decode($content, true);
+
+// Log
+file_put_contents('log.txt', file_get_contents('php://input') . PHP_EOL, FILE_APPEND);
+
 // Validate parsed JSON data
 if (!is_null($events['events'])) {
 	// Loop through each event
 	foreach ($events['events'] as $event) {
 		// Reply only when message sent is in 'text' format
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
+			
 			// Get text sent
-			$text = $event['source']['userId'];
+			//$text = $event['source']['userId'];
+			$text = "ครับ";
+			
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
