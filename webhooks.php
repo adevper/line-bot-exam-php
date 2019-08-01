@@ -1,5 +1,7 @@
 <?php // callback.php
 
+file_put_contents('log.txt', file_get_contents('php://input') . PHP_EOL, FILE_APPEND);
+
 require "vendor/autoload.php";
 require_once('vendor/linecorp/line-bot-sdk/line-bot-sdk-tiny/LINEBotTiny.php');
 
