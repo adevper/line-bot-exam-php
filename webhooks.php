@@ -36,8 +36,8 @@ if (!is_null($events['events'])) {
 				'text' => $text*/
 				
 				type => 'image',
-        				originalContentUrl => 'https://mokmoon.com/images/LINEDevelopers.png',
-        				previewImageUrl => 'https://mokmoon.com/images/LINEDEV.png'
+        				originalContentUrl => 'https://www.akaragroup.co.th/engineer/open.png',
+        				previewImageUrl => 'https://www.akaragroup.co.th/engineer/open.png'
 				
 			];
 
